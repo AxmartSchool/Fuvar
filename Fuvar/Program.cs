@@ -8,8 +8,16 @@ namespace Fuvar
 {
     class Program
     {
+
+        static List<Fuvar> Fuvarok;
         static void Main(string[] args)
         {
+            Fuvarok = Fuvar.Beolvasas();
+
+
+
+            Console.ReadKey();
+
         }
     }
 }
