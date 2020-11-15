@@ -15,8 +15,43 @@ namespace Fuvar
             Fuvarok = Fuvar.Beolvasas();
             UtazasokSzama();
             TaxisBevetele();
+            FizetesiModok();
 
             Console.ReadKey();
+
+        }
+
+        private static void FizetesiModok()
+        {
+
+            Console.WriteLine("5. Feladat: ");
+            Dictionary<string, int> fizetesiModok = new Dictionary<string, int>();
+            foreach (var fuvar in Fuvarok)
+            {
+
+                if (fizetesiModok.ContainsKey(fuvar.FizetesModja))
+                {
+
+                    fizetesiModok[fuvar.FizetesModja]++;
+
+
+                }
+                else
+                {
+                    fizetesiModok.Add(fuvar.FizetesModja, 1);
+                }
+
+
+            }
+
+            foreach (var fizetesiMod in fizetesiModok)
+            {
+
+                Console.WriteLine($"\t{fizetesiMod.Key}: {fizetesiMod.Value} fuvar");
+
+            }
+
+
 
         }
 
