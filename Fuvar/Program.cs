@@ -16,8 +16,17 @@ namespace Fuvar
             UtazasokSzama();
             TaxisBevetele();
             FizetesiModok();
+            OsszesKilometer();
 
             Console.ReadKey();
+
+        }
+
+        private static void OsszesKilometer()
+        {
+            //LINQ
+            Console.WriteLine($"6. Feladat: {(float)Fuvarok.Sum(x=> x.MegtettUtMerfoldben) * 1.6  :#.##}km");
+
 
         }
 
