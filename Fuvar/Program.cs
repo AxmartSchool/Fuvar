@@ -17,8 +17,24 @@ namespace Fuvar
             TaxisBevetele();
             FizetesiModok();
             OsszesKilometer();
+            LeghosszabbFuvar();
 
             Console.ReadKey();
+
+        }
+
+        private static void LeghosszabbFuvar()
+        {
+
+            Console.WriteLine("7. Feladat: Leghosszabb fuvar :");
+
+            //LINQ
+            var leghosszabbFuvar = Fuvarok.First(x=>x.IdotartamMasodpercben == Fuvarok.Max(y => y.IdotartamMasodpercben));
+            Console.WriteLine($"\tFuvar hossza: {leghosszabbFuvar.IdotartamMasodpercben} masodperc\n\tTaxi azonosito: {leghosszabbFuvar.TaxiAzonosito}\n\tMegtett tavolsag: {leghosszabbFuvar.MegtettUtMerfoldben*1.6} km\n\tViteldij: {leghosszabbFuvar.ViteldijDollarban}$");
+            
+
+
+
 
         }
 
