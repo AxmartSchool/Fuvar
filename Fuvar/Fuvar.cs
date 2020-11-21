@@ -19,6 +19,19 @@ namespace Fuvar
         public string FizetesModja { get; set; }
 
 
+        public static void HibakRogzitese(List<Fuvar> hibak)
+        {
+            var sw = new StreamWriter(@"..\..\hibak.txt", false , Encoding.UTF8 );
+
+            sw.WriteLine("taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja");
+            foreach (var fuvar in hibak)
+            {
+                sw.WriteLine($"{fuvar.TaxiAzonosito};{fuvar.IndulasIdeje};{fuvar.IdotartamMasodpercben};{fuvar.MegtettUtMerfoldben};{fuvar.ViteldijDollarban};{fuvar.BorravaloDollarban};{fuvar.FizetesModja}");
+            }
+            sw.Close();
+
+        }
+
         public static List<Fuvar> Beolvasas()
         {
             var output = new List<Fuvar>();

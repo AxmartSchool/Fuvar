@@ -18,8 +18,31 @@ namespace Fuvar
             FizetesiModok();
             OsszesKilometer();
             LeghosszabbFuvar();
+            HibakKirasaTxtbe();
 
             Console.ReadKey();
+
+        }
+
+        private static void HibakKirasaTxtbe()
+        {
+
+            Console.WriteLine("8. Feladat: hibak.txt");
+            var hibak = new List<Fuvar>();
+            foreach (var fuvar in Fuvarok)
+            {
+                if (fuvar.IdotartamMasodpercben >0  && fuvar.ViteldijDollarban > 0 && fuvar.MegtettUtMerfoldben == 0)
+                {
+                    hibak.Add(fuvar);
+                }
+            }
+
+
+
+            Fuvar.HibakRogzitese(hibak.OrderBy(x=>x.IndulasIdeje).ToList());
+            
+            
+
 
         }
 
